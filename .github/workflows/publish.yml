@@ -1,0 +1,61 @@
+name: Publish GitHub Release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag, e.g. v0.1.0
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Verify version tag
+        run: |
+          python - <<'PY'
+          import os, re, tomllib
+          from pathlib import Path
+          version = tomllib.loads(Path('pyproject.toml').read_text())['project']['version']
+          tag = os.environ['RELEASE_TAG']
+          if not re.fullmatch(r'v\d+\.\d+\.\d+', tag) or tag != f'v{version}':
+              raise SystemExit(f'Tag {tag} does not match package version {version}')
+          PY
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m mypy
+      - run: python -m pytest
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - name: Package documentation and checksums
+        run: |
+          python - <<'PY'
+          import hashlib, tomllib, zipfile
+          from pathlib import Path
+          version = tomllib.loads(Path('pyproject.toml').read_text())['project']['version']
+          with zipfile.ZipFile(f'dist/msgames_api-{version}-docs.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+              for path in [Path('README.md'), *sorted(Path('docs').rglob('*'))]:
+                  if path.is_file():
+                      archive.write(path, str(path))
+          lines = [f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in sorted(Path('dist').iterdir()) if p.is_file()]
+          Path('dist/SHA256SUMS').write_text('\n'.join(lines) + '\n')
+          PY
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$RELEASE_TAG" dist/* --verify-tag --title "msgames-api $RELEASE_TAG" --notes-file docs/release-notes.md

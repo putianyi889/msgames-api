@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-10-14T11:10:58.930611+00:00",
+  "player_id": 7872,
+  "checks": {
+    "profile": {
+      "fields": [
+        "Name",
+        "Local Name",
+        "Nickname",
+        "Country",
+        "State",
+        "Joined",
+        "Hand",
+        "Mouse"
+      ],
+      "unicode_name_present": true
+    },
+    "records_time": {
+      "count": 92,
+      "replays": 92
+    },
+    "records_three_bvs": {
+      "count": 121,
+      "replays": 121
+    },
+    "records_ioe": {
+      "count": 4,
+      "replays": 4
+    },
+    "records_density": {
+      "count": 1,
+      "replays": 1
+    },
+    "records_problems": {
+      "count": 6,
+      "replays": 6
+    },
+    "ranking_world": {
+      "count": 100,
+      "next_start": 100
+    },
+    "ranking_arbiter": {
+      "count": 100,
+      "next_start": 100
+    },
+    "country_options": {
+      "countries": 93,
+      "regions": 30
+    },
+    "ranking_country": {
+      "count": 100
+    },
+    "ranking_density": {
+      "count": 89
+    },
+    "ranking_density_board": {
+      "count": 35,
+      "mines": 20
+    },
+    "world_records": {
+      "count": 229,
+      "rejected": 27
+    },
+    "replay_download": {
+      "bytes": 67086,
+      "sha256": "4a493254c90c08cf393c87ebfe9d9bbf7eb4a59e46d5fe9c5529834ec5b6e21f"
+    },
+    "async_profile_and_records": {
+      "records": 92
+    }
+  }
+}

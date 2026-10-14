@@ -1,0 +1,131 @@
+{
+  "observed_on": "2026-10-14",
+  "sources": [
+    {
+      "url": "https://minesweepergame.com/",
+      "bytes": 12416,
+      "sha256": "87151c8a295d89e9858229d5ff201d3241226c615b7cfef107bfcd0be8dcf7e4"
+    },
+    {
+      "url": "https://minesweepergame.com/profile.php?pid=7872",
+      "bytes": 7259,
+      "sha256": "bb594f362733c35b8f98ed17df4baf6e4c21d7391f9ae874357790cf9727471f"
+    },
+    {
+      "url": "https://minesweepergame.com/profile.php?pid=7872&menu=1",
+      "bytes": 6008,
+      "sha256": "aeaf7ff87b7f230bb55ef2565c81ba44ba8da69f68f78be3d75228d53c9a0ee1"
+    },
+    {
+      "url": "https://minesweepergame.com/profile.php?pid=7872&menu=2",
+      "bytes": 89629,
+      "sha256": "0f8710c7c298598d6a78da9dc4c453c5cbc377e19f6e371df64eb92ce110799b"
+    },
+    {
+      "url": "https://minesweepergame.com/profile.php?pid=7872&menu=3",
+      "bytes": 123257,
+      "sha256": "abdd3407cec47197a2c160e9de7a6c6c671f57a25335eefdf1314b4af8c12f23"
+    },
+    {
+      "url": "https://minesweepergame.com/profile.php?pid=7872&menu=4",
+      "bytes": 11526,
+      "sha256": "8afee0a90c1f04ec4a90d6e84e6a654015bd25221e9f0b917233c9c547adddd9"
+    },
+    {
+      "url": "https://minesweepergame.com/profile.php?pid=7872&menu=5",
+      "bytes": 8532,
+      "sha256": "6829f72ce501a8ccacc31ff20b02013179f0f03e4fcf6ef75a5d03d1997a8430"
+    },
+    {
+      "url": "https://minesweepergame.com/profile.php?pid=7872&menu=6",
+      "bytes": 9082,
+      "sha256": "c047dec2a7843834f37e08ee4e6c286e2070f29fff46a762e7a62849866f70c9"
+    },
+    {
+      "url": "https://minesweepergame.com/world-rankings.php",
+      "bytes": 15560,
+      "sha256": "482d89a7e5a176d70260f0413d8f057700388a2237efff4f350612e7fdb99e2f"
+    },
+    {
+      "url": "https://minesweepergame.com/country-rankings.php",
+      "bytes": 21397,
+      "sha256": "4e8e1cb8062ff431087c661f50d5ad5552e07b6a5b7ab349e3b8c04411ddbaea"
+    },
+    {
+      "url": "https://minesweepergame.com/density-rankings.php",
+      "bytes": 18380,
+      "sha256": "79d384404e276f804b8eef7716f5bc40ba000b8267cdc428917ddb4210ac2b68"
+    },
+    {
+      "url": "https://minesweepergame.com/arbiter-rankings.php",
+      "bytes": 13508,
+      "sha256": "489c9306d2c8080523269b7f1a8fae326274bfb16e975c967f52a4cee165a88b"
+    },
+    {
+      "url": "https://minesweepergame.com/world-records.php",
+      "bytes": 66224,
+      "sha256": "ea525752d242ae6ea158a2647d8b969b7f5ffe20e96e1c67970eb531aed6608f"
+    },
+    {
+      "url": "https://minesweepergame.com/statistics.php",
+      "bytes": 11220,
+      "sha256": "d263c91ec6b5e16871590efd9cbacd01fa692bdcbc33a2ae8c36b158f0461658"
+    },
+    {
+      "url": "https://minesweepergame.com/historical-world-rankings.php",
+      "bytes": 13855,
+      "sha256": "595a3cc9361944c42a3f713f5a0ae56cea50713459933b8a28d8c2950b956d16"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-world.php?rid=1&start=0&sort=0",
+      "bytes": 103016,
+      "sha256": "a1de65379c1c17242d8937000dbffeaf1b724c9f543cb7afbd52af8d0725c1aa"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-world.php?rid=5&start=0&sort=0",
+      "bytes": 39403,
+      "sha256": "dcc5d11b1f5de86999bc289233f1c76fd581a3791048c5bc54b50145611ae0a7"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-arbiter.php?rid=3&start=0&sort=0",
+      "bytes": 76743,
+      "sha256": "f376bf958d87011bdf3880658596e761dcd29c338e6ac8e46a59187707e365f7"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-country.php?rid=1&start=0&sort=0",
+      "bytes": 103168,
+      "sha256": "00773580790442cbf0a2fc462ea52ba42c0747bfd7b2ac2a5fdf20af03a58091"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-density.php?rid=6&start=0&sort=0",
+      "bytes": 137651,
+      "sha256": "d4e3160724eb26f18688715ede21641329eb47980d23c7c3ce3eef944e097479"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-density.php?rid=1&mines=20&start=0&sort=0",
+      "bytes": 13911,
+      "sha256": "186ae880fe533dc27855d649b575bbb9c66a6907c9dec93ff2ee51e3405cd275"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-country-menu-states.php?cid=36",
+      "bytes": 1146,
+      "sha256": "acfb44c0fbaeba180bf44f475c41f7d1969186b7b655f2e407709af85882245d"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-country-menu-ranking.php?sid=0",
+      "bytes": 209,
+      "sha256": "c8448317a446d6971b9b80852da03a5cd2a153ea23608eca947c374ac9d6feba"
+    },
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-density-menu-mines.php?rid=1",
+      "bytes": 562,
+      "sha256": "29367ff2f9db46decae5992612347898a82c60557f8f3a303197ba84c355b69c"
+    }
+  ],
+  "unavailable": [
+    {
+      "url": "https://minesweepergame.com/common/ajax/ajax-ranking-historical.php?did=2026-10-13&start=0",
+      "status": 500
+    }
+  ]
+}
