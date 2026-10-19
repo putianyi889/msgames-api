@@ -14,11 +14,12 @@ from msgames_api import (
     HTTPError,
     NotFoundError,
     RateLimitError,
+    RecordMetric,
     RequestError,
     ResponseTooLargeError,
 )
 
-from .conftest import OPTIONS, PROFILE, RANKING, RECORDS, WORLD_RECORDS
+from .conftest import EMPTY_RECORDS, OPTIONS, PROFILE, RANKING, RECORDS, WORLD_RECORDS
 
 REPLAY_URL = "https://minesweepergame.com/member/file/42/test.avf"
 
@@ -72,6 +73,16 @@ async def test_async_public_api(method, args, kwargs):
         async with AsyncClient(http_client=http, min_interval=0) as client:
             assert await getattr(client, method)(*args, **kwargs)
         assert not http.is_closed
+
+
+async def test_empty_problems_page_in_both_clients():
+    transport = httpx.MockTransport(lambda request: httpx.Response(200, text=EMPTY_RECORDS))
+    with httpx.Client(transport=transport) as http:
+        with Client(http_client=http, min_interval=0) as client:
+            assert client.get_records(7714, RecordMetric.PROBLEMS) == ()
+    async with httpx.AsyncClient(transport=transport) as http:
+        async with AsyncClient(http_client=http, min_interval=0) as client:
+            assert await client.get_records(7714, RecordMetric.PROBLEMS) == ()
 
 
 @pytest.mark.parametrize(

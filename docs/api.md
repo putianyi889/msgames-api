@@ -126,6 +126,7 @@ merges rows with the same replay URL and preserves all groups. Without a replay,
 matching level and original column values are used. Set `deduplicate=False` to
 retain displayed rows individually. Separate metric requests are never merged.
 Records are the site's published score history, not every game a player played.
+Normal empty score pages return `()`, including pages with no difficulty tabs or tables.
 No statistic is inferred from a filename. Links use the public frontend's
 `/member/file/{pid}/{filename}` template or a direct `/record/` anchor.
 

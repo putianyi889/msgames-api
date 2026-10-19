@@ -240,8 +240,14 @@ def parse_records(
                 indices[key] = len(records)
                 records.append(record)
     if not known_tables:
-        # The public page renders no tables for a player with no scores.
-        if not soup.select(".msgame-content .nav-tabs"):
+        # Empty score pages can omit both tables and difficulty tabs (e.g. Problems).
+        content = soup.select_one(".msgame-content .col-sm-10")
+        empty_content = (
+            content is not None
+            and not _text(content)
+            and all(tag.name in {"div", "br", "script", "style"} for tag in content.find_all(True))
+        )
+        if not soup.select(".msgame-content .nav-tabs") and not empty_content:
             raise ParseError("Missing record tables and level tabs")
     return tuple(records)
 

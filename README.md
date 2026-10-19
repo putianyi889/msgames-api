@@ -11,7 +11,7 @@
 从 [GitHub Releases](https://github.com/putianyi889/msgames-api/releases) 安装 wheel：
 
 ```sh
-python -m pip install "https://github.com/putianyi889/msgames-api/releases/download/v0.1.0/msgames_api-0.1.0-py3-none-any.whl"
+python -m pip install "https://github.com/putianyi889/msgames-api/releases/download/v0.1.1/msgames_api-0.1.1-py3-none-any.whl"
 ```
 
 ## 使用

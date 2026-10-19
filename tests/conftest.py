@@ -29,6 +29,14 @@ RECORDS = f"""<div class="msgame-content"><ul class="nav-tabs">
 <div class="tab-pane" id="tab_b"><table>{RECORD_HEADER}{RECORD_ROW}</table></div>
 <div class="tab-pane" id="tab_b_nf"><table>{RECORD_HEADER}{RECORD_ROW}</table></div></div>"""
 
+# Reduced structure observed on player 7714's public Problems page.
+EMPTY_RECORDS = """<html><head><title>Player Profile</title></head><body>
+<div class="container-fluid msgame-content">
+<div class="row justify-content-center"><div class="col-sm-10">
+<!-- No scores: the site omits tables and difficulty tabs. -->
+</div></div><script>function playVideo(filePath) {}</script>
+</div></body></html>"""
+
 RANKING_HEADER = """<tr><td></td><td></td><td></td><td></td><td colspan=2>Beginner</td>
 <td colspan=2>Intermediate</td><td colspan=2>Expert</td><td>TOTAL</td></tr>"""
 RANKING_ROW = """<tr><td>1</td><td><img src="image/flags/china.gif">

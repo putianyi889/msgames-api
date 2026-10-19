@@ -42,7 +42,7 @@ from .parsers import (
     parse_world_records,
 )
 
-_USER_AGENT = "msgames-api/0.1.0 (+https://github.com/putianyi889/msgames-api)"
+_USER_AGENT = "msgames-api/0.1.1 (+https://github.com/putianyi889/msgames-api)"
 _REDIRECTS = {301, 302, 303, 307, 308}
 
 

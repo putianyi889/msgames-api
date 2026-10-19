@@ -13,7 +13,7 @@ from msgames_api.parsers import (
     parse_world_records,
 )
 
-from .conftest import OPTIONS, RECORD_ROW, WORLD_RECORDS
+from .conftest import EMPTY_RECORDS, OPTIONS, RECORD_ROW, WORLD_RECORDS
 
 
 def test_profile_unicode_links_and_unknown_fields(profile_html):
@@ -102,6 +102,30 @@ def test_missing_replay_and_empty_records(records_html):
         parse_records("<html>Error page</html>", 42)
     with pytest.raises(ParseError):
         parse_records(records_html.replace("<td>3</td>", ""), 42)
+
+
+@pytest.mark.parametrize("metric", list(RecordMetric))
+@pytest.mark.parametrize("deduplicate", [False, True])
+def test_empty_record_page_without_tabs(metric, deduplicate):
+    assert parse_records(EMPTY_RECORDS, 7714, metric, deduplicate=deduplicate) == ()
+
+
+@pytest.mark.parametrize(
+    "content",
+    ["Server error", "<table><tr><td>Unexpected column</td></tr></table>", "<img src=error.png>"],
+)
+def test_nonempty_unknown_record_page_still_fails(content):
+    html = EMPTY_RECORDS.replace(
+        "<!-- No scores: the site omits tables and difficulty tabs. -->", content
+    )
+    with pytest.raises(ParseError):
+        parse_records(html, 7714, RecordMetric.PROBLEMS)
+
+
+@pytest.mark.parametrize("html", ["", "<html></html>", "<div class=msgame-content></div>"])
+def test_missing_record_content_is_not_a_normal_empty_page(html):
+    with pytest.raises(ParseError):
+        parse_records(html, 7714, RecordMetric.PROBLEMS)
 
 
 def test_ranking_malformed_rows_and_scores(ranking_html):
